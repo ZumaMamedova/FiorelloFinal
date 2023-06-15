@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Category Table</h4>
-                <a class="btn btn-success" asp-controller="category" asp-action="create">
+                <a class="btn btn-success" asp-controller="Category" asp-action="Create">
                     Add Category
                 </a>
                 <div class="table-responsive">
@@ -29,13 +29,13 @@
                                     <td>@item.Desc.Substring(0,10)</td>
                                     <td>
                                         <a class="btn btn-primary" asp-controller="category" asp-action="update" asp-route-id="@item.Id">
-                                            <i class="mdi mdi-delete"></i>
+                                            <i class="mdi mdi-tooltip-edit"></i>
                                         </a>
                                         <a class="btn btn-danger" asp-controller="category" asp-action="delete" asp-route-id="@item.Id">
                                             <i class="mdi mdi-delete"></i>
                                         </a>
                                         <a class="btn btn-success" asp-controller="category" asp-action="detail" asp-route-id="@item.Id">
-                                            <i class=mdi mdi-delete"></i>
+                                            <i class="mdi mdi-account-card-details"></i>
                                         </a>
                                     </td>
                                 </tr>
