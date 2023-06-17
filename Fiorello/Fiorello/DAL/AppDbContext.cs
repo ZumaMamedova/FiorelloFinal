@@ -10,10 +10,11 @@ namespace Fiorello.DAL
         public DbSet<SliderContent>SliderContents { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-        
 
-
-
+        internal void SavingChanges()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     
