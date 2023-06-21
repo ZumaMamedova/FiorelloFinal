@@ -52,6 +52,7 @@ namespace Fiorello.Areas.AdminArea.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
         public IActionResult Update(int?id)
         {
             if (id == null) return NotFound();
@@ -59,6 +60,7 @@ namespace Fiorello.Areas.AdminArea.Controllers
             if (category == null) return NotFound();
             return View(new CategoryUpdateVM { Name=category.Name,Desc=category.Desc});
         }
+
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public IActionResult Update(int?id,CategoryUpdateVM categoryUpdateVm) 

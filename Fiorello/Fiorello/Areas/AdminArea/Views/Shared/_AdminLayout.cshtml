@@ -188,6 +188,13 @@
                             <span class="menu-title">Slider</span>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="adminarea" asp-controller="product" asp-action="index">
+                            <i class="mdi mdi-home menu-icon"></i>
+                            <span class="menu-title">Product</span>
+                        </a>
+                    </li>
                    
                     <li class="nav-item">
                         <a class="nav-link" href="pages/tables/basic-table.html">
@@ -263,8 +270,8 @@
     <script src="~/admin/js/data-table.js"></script>
     <script src="~/admin/js/jquery.dataTables.js"></script>
     <script src="~/admin/js/dataTables.bootstrap4.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+   @* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>*@
     <!-- End custom js for this page-->
     @RenderSection("Scripts",false);
 </body>

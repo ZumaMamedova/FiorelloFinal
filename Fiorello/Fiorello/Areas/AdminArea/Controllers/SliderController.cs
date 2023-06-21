@@ -1,4 +1,5 @@
 ﻿using Fiorello.DAL;
+using Fiorello.Helper;
 using Fiorello.Models;
 using Fiorello.ViewModels.AdminVM.Slider;
 using Microsoft.AspNetCore.Mvc;
@@ -35,32 +36,38 @@ namespace Fiorello.Areas.AdminArea.Controllers
                 return View();
             }
 
-            if (!sliderCreateVm.Photo.ContentType.Contains("Image"))
+            if (!sliderCreateVm.Photo.CheckFileType())
             {
                 ModelState.AddModelError("Photo", "choose the correct one");
                 return View();
             }
 
-            if (sliderCreateVm.Photo.Length<1000)
+            if (sliderCreateVm.Photo.CheckFileSize(1000))
             {
                 ModelState.AddModelError("Photo", "boyuk olcu");
                 return View();
             }
 
-            string fileName = Guid.NewGuid() + sliderCreateVm.Photo.FileName;
-            string path = Path.Combine(_webHostEnvironment.WebRootPath, "img",fileName);
-            
-
-            using(FileStream stream=new FileStream(path,FileMode.Create))
-            {
-                sliderCreateVm.Photo.CopyTo(stream);
-            }
 
             Slider slider = new();
-            slider.ImageUrl = fileName;
+            slider.ImageUrl = sliderCreateVm.Photo.SaveImage(_webHostEnvironment, "img");
             _appDbContext.Sliders.Add(slider);
             _appDbContext.SaveChanges();
             return RedirectToAction("index");
+
+
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null) return NotFound();
+            var slider = _appDbContext.Sliders.FirstOrDefault(c => c.Id == id);
+            if (slider == null) return NotFound();
+            string path = Path.Combine(_webHostEnvironment.WebRootPath, "img",slider.ImageUrl);
+            HelperDelete.DeleteFile(path);
+            _appDbContext.Sliders.Remove(slider);
+            _appDbContext.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
