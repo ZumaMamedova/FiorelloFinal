@@ -38,8 +38,8 @@
                                         <a class="btn btn-primary" asp-controller="product" asp-action="update" asp-route-id="@item.Id">
                                             <i class="mdi mdi-tooltip-edit"></i>
                                         </a>
-                                        <a class="btn btn-danger" asp-controller="product" asp-action="delete" asp-route-id="@item.Id">
-                                            <i class="mdi mdi-delete"></i>
+                                        <a class="btn btn-danger" asp-controller="product" asp-action="delete" asp-route-id="@item.Id"
+                                            onclick="return confirm('Are you sure you want to delete this?');"> <i class="mdi mdi-delete"></i>
                                         </a>
                                         <a class="btn btn-success" asp-controller="product" asp-action="detail" asp-route-id="@item.Id">
                                             <i class="mdi mdi-account-card-details"></i>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mAw4kYIojGEZQKLkfVMM14NluZ3zgR1wgygBmZq+Jgk=",
+  "Hash": "9VRYHB9V//wJXvi/JYFJok5AdpYs590INxdIGRNTlQ8=",
   "Source": "Fiorello",
   "BasePath": "_content/Fiorello",
   "Mode": "Default",
@@ -2429,6 +2429,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\95c44b3f-bcbf-43b6-bcc5-f92e29ff47d1h3-slider-background.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\Main\\BackEnd\\Fiorello\\Fiorello\\Fiorello\\wwwroot\\img\\adf32bde-04b0-4a2d-ac19-45dadf7f84ebh3-background-img.jpg",
+      "SourceId": "Fiorello",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Main\\BackEnd\\Fiorello\\Fiorello\\Fiorello\\wwwroot\\",
+      "BasePath": "_content/Fiorello",
+      "RelativePath": "img/adf32bde-04b0-4a2d-ac19-45dadf7f84ebh3-background-img.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\adf32bde-04b0-4a2d-ac19-45dadf7f84ebh3-background-img.jpg"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\Main\\BackEnd\\Fiorello\\Fiorello\\Fiorello\\wwwroot\\img\\blog-feature-img-1.jpg",

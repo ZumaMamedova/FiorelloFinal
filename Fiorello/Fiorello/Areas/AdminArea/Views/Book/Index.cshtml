@@ -1,0 +1,17 @@
+﻿@model List<Book>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+@foreach(var book in Model)
+{
+    <p>@book.Name</p>
+    foreach(var item in book.BookGenres)
+    {
+        <p>@item.Genre.Name</p>
+    }
+    <hr/>
+}
