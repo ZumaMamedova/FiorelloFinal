@@ -1,4 +1,5 @@
 using Fiorello.DAL;
+using Fiorello.Helper;
 using Fiorello.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +29,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
     options.Lockout.AllowedForNewUsers = true;
     options.Lockout.MaxFailedAccessAttempts = 3;
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
-}).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+}).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders().AddErrorDescriber<CustomIdentityErrorDescriber>();
 
 var app = builder.Build();
 
@@ -37,6 +38,7 @@ app.UseStaticFiles();
 app.UseSession();
 
 app.UseRouting();
+app.UseAuthentication();
 
 app.UseAuthorization();
 
